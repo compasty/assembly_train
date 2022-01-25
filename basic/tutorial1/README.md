@@ -2,7 +2,7 @@
 
 `hello.s`是一个适用Linux的Hello World汇编程序（MacOS文件夹中的`hello.s`是适用macos的版本）, 我们可以首先使用 `nasm -f elf64 hello.s -o hello.o`生成一个目标文件(object file), 目标文件本身是无法执行的，需要执行链接: `ld hello.o -o hello`来获取一个可执行文件。 
 
-> 对于macos可以使用如下命令进行操作: `nasm -f macho64 hello.s -o hello.o`, `ld`, 既可以得到可以运行的Hello World程序
+> 对于macos可以使用如下命令进行操作: `nasm -f macho64 hello.s -o hello.o`, ` ld -o hello -e _start -static hello.o`, 既可以得到可以运行的Hello World程序。
 
 # 基础语法
 
@@ -48,6 +48,28 @@ MacOS系统调用:
 
 寄存器拥有非常高的读写数据，所以在寄存器之间的数据传送非常快。
 
+x86_64中常用的通用寄存器：
+
+| 8-bit | 16-bit | 32-bit | 64-bit |
+| ----- | ------ | ------ | ------ |
+| al    | ax     | eax    | rax    |
+| bl    | bx     | ebx    | rbx    |
+| cl    | cx     | ecx    | rcx    |
+| dl    | dx     | edx    | rdx    |
+| sil   | si     | esi    | rsi    |
+| dil   | di     | edi    | rdi    |
+| spl   | sp     | esp    | rsp    |
+| r8b   | r8w    | r8d    | r8     |
+| r9b   | r9w    | r9d    | r9     |
+| r10b  | r10w   | r10d   | r10    |
+| r11b  | r11w   | r11d   | r11    |
+| r12b  | r12w   | r12d   | r12    |
+| r13b  | r13w   | r13d   | r13    |
+| r14b  | r14w   | r14d   | r14    |
+| r15b  | r15w   | r15d   | r15    |
+
 # 代码解析
 
-`hello.s`首先我们定义了 `text`这个变量存放字符串 `Hello,World!\n`, 然后在 `_start`函数中我们首先将 `rax`寄存器（如果是32位的汇编程序）
+`hello.s`首先我们定义了 `text`这个变量存放字符串 `Hello,World!\n`, 然后在 `_start`函数中我们首先将 `rax`寄存器（如果是32位的汇编程序）置为1，对应`sys_write`命令，然后分别给寄存器 `rdi`, `rsi`, `rdx`传值即传入`sys_write`命令的参数，`rdi`传值1表示标准输出，`rsi`传入`text`对应`Hello, World!\n`字符串的首地址，`rdx`传值14表示字符串的长度，然后执行系统调用完成终端上的字符串打印。
+
+紧接着我们对`rax`赋值60，`rdi`赋值0, 完成系统调用`sys_exit 0`。
