@@ -8,5 +8,5 @@
 
 text db "Hello,World!",10  其中的 db 表示 define bytes，意味着我们要定义一些字节数据，换行符无法打出，所以输入10。text表示一个变量名称，代表这段数据加载的地址（address in memory that this data is located in）, 实际地址由 编译器决定
 
-[text db](img/1.png)
+![text db](img/1.png)
 

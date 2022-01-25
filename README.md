@@ -4,9 +4,27 @@
 
 # 目录结构
 
-├── READMD.md      介绍
-├── basic          基础练习
-└── os             一个简单的操作系统
+├── README.md
+├── basic
+│   ├── tutorial1
+│   │   ├── README.md
+│   │   ├── hello.s
+│   │   ├── img
+│   │   │   └── 1.png
+│   │   └── macos
+│   │       └── hello.s
+│   ├── tutorial2
+│   │   ├── README.md
+│   │   └── calculate.s
+│   ├── tutorial3
+│   │   ├── README.md
+│   │   └── jump.s
+│   └── tutorial4-asm-debug
+├── linux
+│   └── bootsec.s
+├── toyos
+│   └── simple.s
+
 
 # NASM
 
