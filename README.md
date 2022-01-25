@@ -2,29 +2,29 @@
 
 本项目是X86_64的汇编学习的记录，主要参考 《X86汇编语言-从实模式到保护模式》, [Linux Assembly](https://www.youtube.com/watch?v=VQAKkuLL31g)。
 
-# 目录结构
+# 目录结构 (使用 `mddir` 制作)
 
-├─README.md
-├─toyos
-|   └simple.s
-├─linux
-|   └bootsec.s
-├─basic
-|   ├─tutorial4-asm-debug
-|   ├─tutorial3
-|   |     ├─README.md
-|   |     └jump.s
-|   ├─tutorial2
-|   |     ├─README.md
-|   |     └calculate.s
-|   ├─tutorial1
-|   |     ├─README.md
-|   |     ├─hello.s
-|   |     ├─macos
-|   |     |   └hello.s
-|   |     ├─img
-|   |     |  └1.png
-
+    |-- .gitignore
+    |-- README.md
+    |-- basic
+    |   |-- tutorial1
+    |   |   |-- README.md
+    |   |   |-- hello.s
+    |   |   |-- img
+    |   |   |   |-- 1.png
+    |   |   |-- macos
+    |   |       |-- hello.s
+    |   |-- tutorial2
+    |   |   |-- README.md
+    |   |   |-- calculate.s
+    |   |-- tutorial3
+    |   |   |-- README.md
+    |   |   |-- jump.s
+    |   |-- tutorial4-asm-debug
+    |-- linux
+    |   |-- bootsec.s
+    |-- toyos
+        |-- simple.s
 
 # NASM
 
