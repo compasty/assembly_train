@@ -1,0 +1,1 @@
+run from qemu and print hello_world

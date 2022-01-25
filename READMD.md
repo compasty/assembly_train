@@ -1,6 +1,6 @@
 # 概述
 
-本项目是Linux X86_64的汇编学习的记录，主要参考 《X86汇编语言-从实模式到保护模式》, [Linux Assembly](https://www.youtube.com/watch?v=VQAKkuLL31g)。
+本项目是X86_64的汇编学习的记录，主要参考 《X86汇编语言-从实模式到保护模式》, [Linux Assembly](https://www.youtube.com/watch?v=VQAKkuLL31g)。
 
 # 目录结构
 
@@ -19,3 +19,4 @@ NASM全称 `Netwide Asssembler`, 是一个 `80x86` 和 `x86-64`汇编器，基�
 `nasm -f <format> <filename> [-o <output>]`
 
 例如： `name -f elf myfile.asm` 这个指令会生成 `ELF`格式的文件 `myfile.o`, `nasm -f bin myfile.asm -o myfile.com`则是生成原始的二进制文件 `myfile.com`。
+
