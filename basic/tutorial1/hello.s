@@ -3,14 +3,14 @@ section .data
 section .text
         global _start
 _start:
+        ;以下五行完成系统调用sys_write(1, text, 14)
         mov rax, 1           ; linux下调用sys_write
-        ;mov rax, 0x2000004    ; macOS 下调用号需要 0×2000000 + unix syscall #
         mov rdi, 1
         mov rsi, text
         mov rdx, 14
         syscall
 
+        ;以下三行完成系统调用sys_exit(0)
         mov rax, 60          ; linux下调用sys_exit
-        ;mov rax, 0x2000001    ; macs 调用syscall, SYS_exit
         mov rdi, 0
         syscall

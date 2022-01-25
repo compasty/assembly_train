@@ -32,9 +32,12 @@ NASM全称 `Netwide Asssembler`, 是一个 `80x86` 和 `x86-64`汇编器，基�
 
 > NASM不是AT&T风格汇编（GNU汇编器采用的语法），而是Intel风格
 
-## 命令行语法
+## 命令
 
 `nasm -f <format> <filename> [-o <output>]`
 
 例如： `name -f elf myfile.asm` 这个指令会生成 `ELF`格式的文件 `myfile.o`, `nasm -f bin myfile.asm -o myfile.com`则是生成原始的二进制文件 `myfile.com`。
 
+## 语法
+
+NASM源码行通常为格式: `label:   instruction operands  ;comment`, 首先是可选的标号，然后是指令，最后是注释（使用`;`）

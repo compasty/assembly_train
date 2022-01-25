@@ -3,7 +3,7 @@ section .data
 section .text
         global _start
 _start:
-        mov rax, 0x2000004    ; macOS 下调用号需要 0×2000000 + unix syscall #
+        mov rax, 0x2000004    ; macOS 下调用号需要 0×2000000 + syscall id #
         mov rdi, 1
         mov rsi, text
         mov rdx, 14

@@ -21,7 +21,7 @@
 
 4. db
 
-`db`表示`define bytes`, 表示定义一些字节数据。由于换行符无法打出，在`hello.s`输入的是其ASCII码值10。 
+`db`是一条伪指令(pseudo-instructions)表示`define bytes`, 表示定义一些字节数据。由于换行符无法打出，在`hello.s`输入的是其ASCII码值10。 
 
 `text db "Hello,World!",10`中 `text`是变量名称，代表这段数据加载的地址（address in memory that this data is located in）, 实际地址由编译器决定。
 
@@ -36,11 +36,7 @@
 ![input registers](img/2.png)
 ![system call list](img/3.png)
 
-> Linux中常用的文件描述符（file descriptor）: 0对应标准输入，1对应标准输出，2对应标准错误输出
-
-MacOS系统调用:
-
-在`hello.s`的代码中，我们执行了两个系统调用，分别是
+> Linux中常用的文件描述符（file descriptor）: 0对应标准输入，1对应标准输出，2对应标准错误输出。
 
 # 寄存器
 
@@ -68,8 +64,12 @@ x86_64中常用的通用寄存器：
 | r14b  | r14w   | r14d   | r14    |
 | r15b  | r15w   | r15d   | r15    |
 
+> 当 `rax`的值为 FEDCBA9876543210H的时候，`eax`则为76543210H，`ax`的值为为3210H，`al`的值为10H。
+
 # 代码解析
 
 `hello.s`首先我们定义了 `text`这个变量存放字符串 `Hello,World!\n`, 然后在 `_start`函数中我们首先将 `rax`寄存器（如果是32位的汇编程序）置为1，对应`sys_write`命令，然后分别给寄存器 `rdi`, `rsi`, `rdx`传值即传入`sys_write`命令的参数，`rdi`传值1表示标准输出，`rsi`传入`text`对应`Hello, World!\n`字符串的首地址，`rdx`传值14表示字符串的长度，然后执行系统调用完成终端上的字符串打印。
+
+![sys_write](img/4.png)
 
 紧接着我们对`rax`赋值60，`rdi`赋值0, 完成系统调用`sys_exit 0`。
