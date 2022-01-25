@@ -4,26 +4,26 @@
 
 # 目录结构
 
-├── README.md
-├── basic
-│   ├── tutorial1
-│   │   ├── README.md
-│   │   ├── hello.s
-│   │   ├── img
-│   │   │   └── 1.png
-│   │   └── macos
-│   │       └── hello.s
-│   ├── tutorial2
-│   │   ├── README.md
-│   │   └── calculate.s
-│   ├── tutorial3
-│   │   ├── README.md
-│   │   └── jump.s
-│   └── tutorial4-asm-debug
-├── linux
-│   └── bootsec.s
-├── toyos
-│   └── simple.s
+├─README.md
+├─toyos
+|   └simple.s
+├─linux
+|   └bootsec.s
+├─basic
+|   ├─tutorial4-asm-debug
+|   ├─tutorial3
+|   |     ├─README.md
+|   |     └jump.s
+|   ├─tutorial2
+|   |     ├─README.md
+|   |     └calculate.s
+|   ├─tutorial1
+|   |     ├─README.md
+|   |     ├─hello.s
+|   |     ├─macos
+|   |     |   └hello.s
+|   |     ├─img
+|   |     |  └1.png
 
 
 # NASM
