@@ -11,8 +11,6 @@ nasm类似C语言支持预处理，在上一节中我们发现在Linux和MacOS�
 %define a(a1, a2)  a1*a2
 ```
 
-
-
 ## 条件编译
 
 

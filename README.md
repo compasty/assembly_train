@@ -1,30 +1,11 @@
 # 概述
 
-本项目是X86_64的汇编学习的记录，主要参考 《X86汇编语言-从实模式到保护模式》, [Linux Assembly](https://www.youtube.com/watch?v=VQAKkuLL31g)。
+本项目是X86_64的汇编学习的记录，使用`NASM`进行代码编写，主要参考 《X86汇编语言-从实模式到保护模式》, [Linux Assembly](https://www.youtube.com/watch?v=VQAKkuLL31g)。
 
 # 目录结构 (使用 `mddir` 制作)
 
-    |-- .gitignore
-    |-- README.md
-    |-- basic
-    |   |-- tutorial1
-    |   |   |-- README.md
-    |   |   |-- hello.s
-    |   |   |-- img
-    |   |   |   |-- 1.png
-    |   |   |-- macos
-    |   |       |-- hello.s
-    |   |-- tutorial2
-    |   |   |-- README.md
-    |   |   |-- calculate.s
-    |   |-- tutorial3
-    |   |   |-- README.md
-    |   |   |-- jump.s
-    |   |-- tutorial4-asm-debug
-    |-- linux
-    |   |-- bootsec.s
-    |-- toyos
-        |-- simple.s
+`basic`目录主要是包含汇编程序的基础学习内容，
+`toyos`目录是采用汇编和C语言编写的简单操作系统。
 
 # NASM
 
